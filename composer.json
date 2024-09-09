@@ -1,0 +1,21 @@
+{
+    "name": "vendor/proyecto",
+    "description": "\"mi primer proyecto php con composer\"",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vendor\\Proyecto\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pixelguy14",
+            "email": "Pixelguy14@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "firebase/php-jwt": "^6.10"
+    }
+}
