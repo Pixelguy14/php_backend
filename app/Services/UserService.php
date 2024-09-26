@@ -1,5 +1,5 @@
 <?php
-  require_once 'app/Repositories/UserRepository.php';
+  // require_once '../Repositories/UserRepository.php';
 
   class UserService {
     private $userRepository;
@@ -7,6 +7,11 @@
     public function __construct(UserRepository $userRepository){
         $this->userRepository = $userRepository;
     }
+    
+    public function getAll(){
+      return $this->userRepository->getAll();
+    }
+
     public function createUser($data) {
         $user = new User();
         $user->nombre = $data['nombre'];
@@ -19,6 +24,7 @@
         // $user->password = $data['password'];
         $user->password = password_hash($data['password'], PASSWORD_BCRYPT);
         $user->rol = $data['rol'];
+        
         return $this->userRepository->create($user);
     }
   }
